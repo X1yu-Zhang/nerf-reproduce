@@ -5,8 +5,8 @@ A repo to reproduce NeRF.
 ## TODO
 
 - [x] Build model and implement positional encoding( `model.py` )
-- [ ] Prepare and transform dataset( `datasets.py` )
-- [ ] Batchify the input rays
+- [x] Prepare and transform dataset( `datasets.py` )
+- [x] Batchify the input rays
 - [ ] Transform the output of neural network to rgb color and weight.
 - [ ] Hierarchical Sampling
 
