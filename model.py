@@ -46,11 +46,8 @@ class NeRF(nn.Module):
         
     def forward(self, rays):  
         xyz, dir = torch.split(rays, [3,3], dim = 1)
-        # print(xyz.shape, dir.shape)
-        # print(xyz.dtype)
-        # with torch.no_grad():
-        xyz = self.xyz_embedding.embed(xyz).to(self.device)
-        dir = self.dir_embedding.embed(dir).to(self.device)
+        xyz = self.xyz_embedding.embed(xyz)
+        dir = self.dir_embedding.embed(dir)
         hidden = xyz
         for i, model in enumerate(self.pts_linears):
             hidden = F.relu(model(hidden))
@@ -65,7 +62,6 @@ class NeRF(nn.Module):
                 hidden = model(hidden)
             else:
                 hidden = model(F.relu(hidden))
-    
         return torch.cat([hidden,alpha], dim = -1)
       
         

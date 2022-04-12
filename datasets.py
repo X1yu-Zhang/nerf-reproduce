@@ -79,11 +79,11 @@ class RaysDataset(Dataset):
 def load_dataset(args):
     K, datasets, near, far = eval('load_'+args.dataset_type+'_data')(args)
     split = ['train', 'test', 'val']
-    rays = []
     for keys in split:
         poses = datasets[keys]['extrinsic_matrix']
         images = datasets[keys]['images']
-        rays.append(get_rays_rgb(poses, images, K, near, no_ndc = args.no_ndc))
+        if keys == 'train':
+            rays = get_rays_rgb(poses, images, K, near, no_ndc = args.no_ndc)
 
 
-    return *rays, near, far
+    return rays, near, far
