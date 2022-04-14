@@ -1,19 +1,10 @@
-expname = blender_paper_lego
-basedir = ./logs
 datadir = ./data/nerf_synthetic/lego
 dataset_type = blender
-
-no_batching = True
-
-use_viewdirs = True
 white_bkgd = True
-lrate_decay = 500
+half_res = True
 
 N_samples = 64
-N_importance = 128
-N_rand = 1024
+N_fine = 128
 
-precrop_iters = 500
-precrop_frac = 0.5
+output = ./output/lego_test
 
-half_res = True
