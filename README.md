@@ -20,6 +20,8 @@ python train.py --config ./configs/lego.txt {--ckpt model_path}
 ```
 
 `--ckpt` is optional. You can continue training the model by adding `ckpt`.
+
+You can add `--batch_size` and `--network_batch` to avoid OOM error.
 ## Test
 
 ```shell
