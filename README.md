@@ -11,6 +11,21 @@ A repo to reproduce NeRF.
 - [x] Hierarchical Sampling
 - [x] Add render_only and use pretrained model to synthesize novol view
 - [ ] Support more dataset
+- [ ] Add test step and validation step while training
+
+## Train
+
+```shell
+python train.py --config ./configs/lego.txt {--ckpt model_path}
+```
+
+`--ckpt` is optional. You can continue training the model by adding `ckpt`.
+## Test
+
+```shell
+python train.py --config ./configs/lego.txt --ckpt pretrained_model_path --render_only
+```
+
 ## Citation
 Kudos to the authors for their amazing results:
 ```
