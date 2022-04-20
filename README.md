@@ -1,6 +1,6 @@
 # NeRF-reproduce
 
-A repo to reproduce NeRF.
+A repo to reproduce [NeRF](https://www.matthewtancik.com/nerf).
 
 ## TODO
 
